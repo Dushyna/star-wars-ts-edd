@@ -1,7 +1,3 @@
-export interface SWContextValue {
-    page: string,
-    changePage: (page: string) => void,
-}
 
 export interface HeroInfo {
     name: string,
@@ -13,3 +9,9 @@ export interface HeroInfo {
     skin_color: string,
     eye_color: string
 }
+export interface Hero {
+    name: string,
+    img: string,
+    url: string
+}
+export type Characters=Record<string, Hero>

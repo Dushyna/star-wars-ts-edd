@@ -6,14 +6,14 @@ import {defaultHero} from "./utils/constants.ts";
 import {SWContext} from "./utils/context.ts";
 
 function App() {
-    const[hero,setHero] = useState(defaultHero);
+    const [hero, setHero] = useState(defaultHero);
 
     return (
         <div className={'mx-2'}>
-            <SWContext value={{hero, changeHero:setHero}}>
-            <Header />
-            <Main />
-            <Footer/>
+            <SWContext value={{hero, changeHero: setHero}}>
+                <Header/>
+                <Main/>
+                <Footer/>
             </SWContext>
         </div>
     )

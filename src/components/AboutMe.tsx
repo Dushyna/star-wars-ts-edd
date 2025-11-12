@@ -1,16 +1,16 @@
 import {useContext, useEffect, useState} from "react";
 import {characters, defaultHero, period_month} from "../utils/constants.ts";
 import type {HeroInfo} from "../utils/types";
-import {useParams} from "react-router";
+import {Navigate, useParams} from "react-router";
 import {SWContext} from "../utils/context.ts";
 
 const AboutMe = () => {
     const [hero, setHero] = useState<HeroInfo>();
     const {heroId = defaultHero} = useParams();
-    const {changeHero}=useContext(SWContext)
+    const {changeHero} = useContext(SWContext)
 
     useEffect(() => {
-        if(!(heroId in characters)){
+        if (!(heroId in characters)) {
             return;
         }
         changeHero(heroId);
@@ -39,7 +39,9 @@ const AboutMe = () => {
                 })
         }
     }, [])
-
+    if (!(heroId in characters)) {
+        return (<Navigate to='<ErrorPage/>'/>);
+    }
     return (
         <>
             {(!!hero) &&

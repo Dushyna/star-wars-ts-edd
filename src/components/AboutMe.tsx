@@ -38,7 +38,7 @@ const AboutMe = () => {
                     }));
                 })
         }
-    }, [])
+    }, [heroId])
     if (!(heroId in characters)) {
         return (<Navigate to='<ErrorPage/>'/>);
     }

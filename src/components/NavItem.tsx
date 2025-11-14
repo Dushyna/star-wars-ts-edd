@@ -8,7 +8,7 @@ interface NavItemProps {
 }
 
 const NavItem = ({itemTitle}: NavItemProps) => {
-    const {hero}=useContext(SWContext);
+    const {hero} = useContext(SWContext);
     return (
         <NavLink to={`/${itemTitle.toLowerCase()}/${hero}`}>
             <Button>{itemTitle}</Button>
